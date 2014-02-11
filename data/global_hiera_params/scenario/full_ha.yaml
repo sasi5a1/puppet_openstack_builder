@@ -1,7 +1,7 @@
 ---
 db_type: galera
 rpc_type: rabbitmq
-cinder_backend: iscsi
+cinder_backend: rbd
 glance_backend: swift
 compute_type: libvirt
 # networking options
