@@ -1,12 +1,12 @@
-control-server: controller
 control-server01: controller
 control-server02: controller
 control-server03: controller
 
-compute-server: compute
 compute-server01: compute
 compute-server02: compute
 compute-server03: compute
+
+cvf2-server-d1: build
 
 all-in-one: all_in_one
 

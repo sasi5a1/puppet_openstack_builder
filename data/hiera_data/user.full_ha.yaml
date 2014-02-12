@@ -3,36 +3,36 @@
 #
 
 ntp_servers:
-  - build-server.dmz-pod2.lab
+  - cvf2-server-d1.cisco.com
 
-build_node_name: build-server.dmz-pod2.lab
-domain_name: dmz-pod2.lab
+build_node_name: cvf2-server-d1.cisco.com
+domain_name: cisco.com
 
-coe::base::controller_hostname: control
+coe::base::controller_hostname: control-server01
 
-controller_internal_address: 192.168.220.40
-controller_public_address: 192.168.220.40
-controller_admin_address: 192.168.220.40
+controller_internal_address: 2.5.1.9
+controller_public_address: 2.5.1.9
+controller_admin_address: 2.5.1.9
 
-swift_internal_address: 192.168.220.60
-swift_public_address: 192.168.220.60
-swift_admin_address: 192.168.220.60
+swift_internal_address: 2.4.1.4
+swift_public_address: 2.4.1.4
+swift_admin_address: 2.4.1.4
 
 # maps to ovs local_ip from the gre data mappings
-internal_ip: "%{ipaddress_eth3}"
-external_interface: eth1
-public_interface: eth1
+internal_ip: "%{ipaddress_eth2}"
+external_interface: eth3
+public_interface: eth2
 private_interface: eth0
 
 # Swift networking parameters
-swift_storage_interface: eth0.222
+swift_storage_interface: eth2.222
 swift_storage_netmask: 255.255.255.0
-swift_proxy_net_ip: "%{ipaddress_eth0}"
-swift_local_net_ip: "%{ipaddress_eth0_222}"
+swift_proxy_net_ip: "%{ipaddress_eth2}"
+swift_local_net_ip: "%{ipaddress_eth2_222}"
 
-nova::compute::vncserver_proxyclient_address: "%{ipaddress_eth0}"
+nova::compute::vncserver_proxyclient_address: "%{ipaddress_eth2}"
 
-horizon::keystone_url: 'http://192.168.220.40:5000/v2.0/'
+horizon::keystone_url: 'http://2.4.1.9:5000/v2.0/'
 
 # user data for individual passwords
 cinder_db_password: cinder_pass
